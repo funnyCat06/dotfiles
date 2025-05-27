@@ -1,0 +1,26 @@
+(defcfg process-unmapped-keys yes)
+
+(defsrc 
+  esc
+  caps  a s d f    j k l scln
+)
+
+(deflayer base 
+  caps
+  esc @a-mod @s-mod @d-mod @f-mod     @j-mod @k-mod @l-mod @scln-mod
+)
+
+(defvar
+ tap-time 250
+ hold-time 250
+)
+
+(defalias a-mod (tap-hold $tap-time $hold-time a lalt))
+(defalias s-mod (tap-hold $tap-time $hold-time s lctrl))
+(defalias d-mod (tap-hold $tap-time $hold-time d lmet))
+(defalias f-mod (tap-hold $tap-time $hold-time f lshift))
+
+(defalias j-mod (tap-hold $tap-time $hold-time j rshift))
+(defalias k-mod (tap-hold $tap-time $hold-time k rmet))
+(defalias l-mod (tap-hold $tap-time $hold-time l rctrl))
+(defalias scln-mod (tap-hold $tap-time $hold-time scln ralt))
