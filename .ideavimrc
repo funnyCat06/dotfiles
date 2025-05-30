@@ -1,0 +1,173 @@
+set scrolloff=13
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+" Smart line joining
+set ideajoin
+" Do incremental searching.
+set incsearch
+" Highlight searching
+set hlsearch
+set ignorecase
+
+let mapleader=" "
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+set surround
+set sneak
+set quickscope
+set nerdtree
+set easymotion
+set notimeout
+set which-key
+
+" disable the timeout option
+set notimeout
+
+" increase the timeoutlen (default: 1000), don't add space around the equal sign
+set timeoutlen=5000
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+nnoremap U <C-r>
+
+" map <C-j> <Action>(EditorDown)
+" map <C-k> <Action>(EditorUp)
+
+nmap <S-f> <Action>(Find)
+nmap <S-r> <Action>(Replace)
+
+" Camel_case and snakeCase navigation
+noremap 'w [w
+noremap 'b [b
+noremap 'e ]w
+noremap 'B ]b
+
+" Tab navigation
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>\
+
+" Panel navigation
+noremap <A-j> <C-w>j
+noremap <A-h> <C-w>h
+noremap <A-k> <C-w>k
+map <A-l> <C-w>l
+
+" Remove searching highlight
+nnoremap <ESC> :nohlsearch<cr>
+
+map <C-k> <Action>(MoveLineUp)
+map <C-j> <Action>(MoveLineDown)
+map <C-S-k> <Action>(MoveStatementUp)
+map <C-S-j> <Action>(MoveStatementDown)
+
+imap <S-enter> <Action>(EditorCompleteStatement)
+
+" Popup navigation
+" inoremap <C-j> <Action>(PopupMenu-selectNext)
+" inoremap <C-k> <Action>(PopupMenu-selectPrev)
+
+
+" Run
+map <leader>ce <Action>(Run)
+map <leader>cs <Action>(Stop)
+
+" Searching
+map <leader>sf <Action>(GotoFile)
+map <leader>sp <Action>(FindInPath)
+map <leader>sP <Action>(FindSelectionInPath)
+map <leader>ss <Action>(SearchEverywhere)
+map <leader>sa <Action>(GotoAction)
+map <leader>sc <Action>(GotoClass)
+map <leader>sS <Action>(GotoSymbol)
+map <leader>st <Action>(TextSearchAction)
+
+map <leader>ff <Action>(Switcher)
+map <leader>fS <Action>(ActivateStructureToolWindow)
+map <leader>fs <Action>(FileStructurePopup)
+map <leader>fm <Action>(Move)
+
+" navigation
+map <leader>gy <Action>(ExpressionTypeInfo)
+map <leader>gt <Action>(GotoTypeDeclaration)
+map <leader>gT <Action>(QuickTypeDefinition)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gI <Action>(QuickImplementations)
+map <leader>gm <Action>(GotoSuperMethod)
+map <leader>gU <Action>(FindUsages)
+map <leader>gu <Action>(ShowUsages)
+map <leader>hi <Action>(ShowHoverInfo)
+map <leader>gc <Action>(JumpToLastChange)
+map <leader>gp <Action>(ParameterInfo)
+
+map <leader>aa <Action>(ShowIntentionActions)
+map <leader>ac <Action>(CodeCompletion)
+
+map <leader>en <Action>(GotoNextError)
+map <leader>ep <Action>(GotoPreviousError)
+
+" Refactoring
+map <leader>rc <Action>(ReformatCode)
+map <leader>ro <Action>(OptimizeImports)
+map <leader>rn <Action>(RenameElement)
+map <leader>rf <Action>(RenameFile)
+map <leader>rp <Action>(ReplaceInPath)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>ra <Action>(IntroduceParameter)
+map <leader>rw <Action>(SurroundWith)
+map <leader>rg <Action>(Generate)
+
+" Panel splitting
+map <leader>wh <Action>(MoveTabDown)
+map <leader>wv <Action>(MoveTabRight)
+map <leader>ww <Action>(Unsplit)
+map <leader>wa <Action>(UnsplitAll)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+map <leader>wq <Action>(CloseContent)
+map <leader>qw <Action>(HideActiveWindow)
+
+map <leader>ggg <Action>(ActivateVersionControlToolWindow)
+map <leader>ggc <Action>(ActivateCommitToolWindow)
+map <leader>ggb <Action>(Git.Branches)
+map <leader>ggp <Action>(Vcs.Push)
+
+
+map <leader>vr <Action>(IdeaVim.ReloadVimRc.reload):nohlsearch<cr>
+map <leader>vc :edit ~/.ideavimrc<cr>
+map <leader>va <Action>(VimFindActionIdAction)
+map <leader>vt <Action>(VimFindActionIdAction)
+
+map <leader>irr <Action>(RestartIde)
+map <leader>id <Action>(ToggleDistractionFreeMode)
+map <leader>in <Action>(ActivateNotificationsToolWindow)
+map <leader>il <Action>(ActivateLogcatToolWindow)
+map <leader>it <Action>(ActivateTerminalToolWindow)
+map <leader>is <Action>(ShowSettings)
+map <leader>ib <Action>(ActivateBuildToolWindow)
+map <leader>im <Action>(ResourceExplorer.open)
+map <leader>ic <Action>(ToggleCompactMode)
+map <leader>ip <Action>(ActivateProblemsViewToolWindow)
+map <leader>ie <Action>(ActivateDeviceManager2ToolWindow)
+map <leader>tb <Action>(ViewToolBar)
+map <leader>irw <Action>(ActivateRunToolWindow)
+map <leader>ig <Action>(ActivateGradleToolWindow)
+
+map <leader>po <Action>(OpenFile)
+map <leader>pc <Action>(CloseProject)
+map <leader>ps <Action>(ExternalSystem.ProjectRefreshAction)
+
+" Couldn't find a keymap for these:
+    " map <leader> <Action>(FileStructurePopup)
+    " ConsoleView.ClearAll
+    " ToggleRenderedDocPresentationForAll
+    " OverrideMethod
